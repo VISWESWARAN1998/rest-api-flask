@@ -17,7 +17,7 @@ class RESTSecret:
 def hash_password(password):
     sha512 = hashlib.sha512(password.encode("utf8")).hexdigest()
     hashed_password = bcrypt.hashpw(sha512.encode("utf8"), bcrypt.gensalt())
-    return hashed_password.decode("utf8")
+    return hashed_password
 
 
 def verify_password(password, password_hash):
